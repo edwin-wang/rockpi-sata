@@ -24,8 +24,16 @@ cmds = {
     'disk': "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
 }
 
-lv2dc = {'lv3': 100, 'lv2': 75, 'lv1': 50, 'lv0': 25}
-
+lv2dc = {'lv9': 100,
+         'lv8': 90,
+         'lv7': 80,
+         'lv6': 70,
+         'lv5': 60,
+         'lv4': 50,
+         'lv3': 40,
+         'lv2': 30,
+         'lv1': 20,
+         'lv0': 15}
 
 # pin37(bcm26) sata0, pin22(bcm25) sata1
 def set_mode(pin, mode):
@@ -105,6 +113,13 @@ def read_conf():
         conf['fan']['lv1'] = cfg.getfloat('fan', 'lv1')
         conf['fan']['lv2'] = cfg.getfloat('fan', 'lv2')
         conf['fan']['lv3'] = cfg.getfloat('fan', 'lv3')
+        conf['fan']['lv4'] = cfg.getfloat('fan', 'lv4')
+        conf['fan']['lv5'] = cfg.getfloat('fan', 'lv5')
+        conf['fan']['lv6'] = cfg.getfloat('fan', 'lv6')
+        conf['fan']['lv7'] = cfg.getfloat('fan', 'lv7')
+        conf['fan']['lv8'] = cfg.getfloat('fan', 'lv8')
+        conf['fan']['lv9'] = cfg.getfloat('fan', 'lv9')
+        conf['fan']['lv10'] = cfg.getfloat('fan', 'lv10')
         # key
         conf['key']['click'] = cfg.get('key', 'click')
         conf['key']['twice'] = cfg.get('key', 'twice')
@@ -123,6 +138,13 @@ def read_conf():
         conf['fan']['lv1'] = 40
         conf['fan']['lv2'] = 45
         conf['fan']['lv3'] = 50
+        conf['fan']['lv4'] = 55
+        conf['fan']['lv5'] = 60
+        conf['fan']['lv6'] = 65
+        conf['fan']['lv7'] = 70
+        conf['fan']['lv8'] = 71
+        conf['fan']['lv9'] = 72
+        conf['fan']['lv10'] = 75
         # key
         conf['key']['click'] = 'slider'
         conf['key']['twice'] = 'switch'

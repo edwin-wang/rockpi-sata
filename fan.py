@@ -63,4 +63,4 @@ def running():
 
     while True:
         change_dc(get_dc())
-        time.sleep(0.1)
+        time.sleep(1)
